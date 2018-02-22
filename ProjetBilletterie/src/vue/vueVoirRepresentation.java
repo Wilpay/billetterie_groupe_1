@@ -5,17 +5,23 @@
  */
 package vue;
 
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author btssio
  */
 public class vueVoirRepresentation extends javax.swing.JFrame {
 
+    private DefaultTableModel modeleTableRepresentation;
     /**
      * Creates new form vueVoirRepresentation
      */
     public vueVoirRepresentation() {
         initComponents();
+        modeleTableRepresentation = new DefaultTableModel();
+        jTable1.setModel(modeleTableRepresentation);
     }
 
     /**
@@ -82,6 +88,22 @@ public class vueVoirRepresentation extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    public DefaultTableModel getModeleTableRepresentation() {
+        return modeleTableRepresentation;
+    }
+
+    public void setModeleTableRepresentation(DefaultTableModel modeleTableRepresentation) {
+        this.modeleTableRepresentation = modeleTableRepresentation;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
 
     /**
      * @param args the command line arguments

@@ -5,7 +5,12 @@
  */
 package projetbilletterie;
 
+import controleur.CtrlLesRepresentations;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import modele.dao.Jdbc;
 import vue.vuePrincipale;
+import vue.vueVoirRepresentation;
 
 /**
  *
@@ -17,8 +22,18 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        vuePrincipale uneVue = new vuePrincipale();
-        uneVue.setVisible(true);
+        Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "festival", "root", "");
+        try {
+            Jdbc.getInstance().connecter();
+            vueVoirRepresentation uneVue = new vueVoirRepresentation();
+            CtrlLesRepresentations unControleur = new CtrlLesRepresentations(uneVue);
+            // afficher la vue
+            uneVue.setVisible(true);
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Main - classe JDBC non trouvée");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Main - échec de connexion");
+        }
     }
     
 }

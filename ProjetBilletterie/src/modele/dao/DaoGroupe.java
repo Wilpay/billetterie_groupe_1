@@ -23,7 +23,7 @@ public class DaoGroupe {
      * @return objet Adresse
      * @throws SQLException 
      */
-    public static Groupe selectOne(int idGroupe) throws SQLException {
+    public static Groupe selectOne(String idGroupe) throws SQLException {
         Groupe unGroupe = null;
         ResultSet rs;
         PreparedStatement pstmt;
@@ -31,7 +31,7 @@ public class DaoGroupe {
         // préparer la requête
         String requete = "SELECT * FROM Groupe WHERE ID= ?";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
-        pstmt.setInt(1, idGroupe);
+        pstmt.setString(1, idGroupe);
         rs = pstmt.executeQuery();
         if (rs.next()) {
             String id = rs.getString("ID");
