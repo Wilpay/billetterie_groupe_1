@@ -99,7 +99,7 @@ public class TestDaoGroupe {
      * Ajoute un client 
      * @throws SQLException
      */
-    public static void test3_Insert(String idGroupe) throws SQLException {
+    public static void test3_Insert(int idGroupe) throws SQLException {
         Groupe unGroupe = new Groupe("1", "Groupe folklorique du Bachkortostan", null, null, 40, "Bachkirie", "O");
         int nb= DaoGroupe.insert(idGroupe, unGroupe);
         System.out.println("Un nouveau groupe a été insérée: "+nb);

@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import static javax.swing.UIManager.getString;
 import modele.dao.DaoGroupe;
@@ -135,15 +136,23 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
 
     @Override
     public void mouseClicked(MouseEvent e) {
-            int row = vue.getjTable1().getSelectedRow();
+        int row = vue.getjTable1().getSelectedRow();
         String groupeChoisis = (String) vue.getjTable1().getValueAt(row, 0);
         String Places = (String) vue.getjTable1().getValueAt(row, 5);
-        String groupeChoisisRes = null;
-        String idGroupeChoisis=null;
         int rep = JOptionPane.showConfirmDialog(vue, "Representation : " + groupeChoisis + "\n" + "Il reste : " + Places + " places"+"\n"+"Voulez-vous acheter des places ?");
-        if(rep == JOptionPane.YES_OPTION){
-        vueReservation.setVisible(true);
-        }
+        if(rep == JOptionPane.YES_OPTION){    
+
+                JFrame fenetre = new JFrame();
+                fenetre.setVisible(true);
+                //Définit un titre pour notre fenêtre
+
+    fenetre.setTitle("Acheter des places");
+    //Définit sa taille : 400 pixels de large et 100 pixels de haut
+    fenetre.setSize(400, 100);
+    //Nous demandons maintenant à notre objet de se positionner au centre
+    fenetre.setLocationRelativeTo(null);
+    
+    }
         
              
         
