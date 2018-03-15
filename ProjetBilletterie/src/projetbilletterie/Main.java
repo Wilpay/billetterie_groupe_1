@@ -6,10 +6,12 @@
 package projetbilletterie;
 
 import controleur.CtrlLesRepresentations;
+import controleur.CtrlLesReservations;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import modele.dao.Jdbc;
 import vue.vuePrincipale;
+import vue.vueReservation;
 import vue.vueVoirRepresentation;
 
 /**
@@ -27,6 +29,9 @@ public class Main {
             Jdbc.getInstance().connecter();
             vueVoirRepresentation uneVue = new vueVoirRepresentation();
             CtrlLesRepresentations unControleur = new CtrlLesRepresentations(uneVue);
+            vueReservation uneAutreVue = new vueReservation();
+            CtrlLesReservations unAutreControleur = new CtrlLesReservations(uneAutreVue);
+            
             // afficher la vue
             uneVue.setVisible(true);
         } catch (ClassNotFoundException ex) {

@@ -55,7 +55,12 @@ public class vueVoirRepresentation extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jToggleButton1.setText("Menu Principale");
+        jToggleButton1.setText("Menu Principal");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,6 +93,10 @@ public class vueVoirRepresentation extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     public DefaultTableModel getModeleTableRepresentation() {
         return modeleTableRepresentation;
