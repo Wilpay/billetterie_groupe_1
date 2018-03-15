@@ -43,6 +43,8 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
         this.vue.addWindowListener(this);
         // le controleur écoute le bouton jButtonRechercher de sa vue
         this.vue.getjTable1().addMouseListener(this);
+        
+        
         // préparer l'état iniitial de la vue
         List<Representation> lesRepresentations = null;
         try {
@@ -143,6 +145,7 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
         int rep = JOptionPane.showConfirmDialog(vue, "Representation : " + groupeChoisis + "\n" + "Il reste : " + Places + " places"+"\n"+"Voulez-vous acheter des places ?");
         if(rep == JOptionPane.YES_OPTION){                 
             new vueReservation().setVisible(true);
+            
     }
         
              
