@@ -146,7 +146,7 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
     public void mouseClicked(MouseEvent e) {
         
         int row = vue.getjTable1().getSelectedRow();
-        String prix = "4";
+        String prix = "4 €";
         String LieuChoisis = (String) vue.getjTable1().getValueAt(row, 0);
         String Places = (String) vue.getjTable1().getValueAt(row, 5);
         String GroupeChoisis = (String) vue.getjTable1().getValueAt(row, 1);
