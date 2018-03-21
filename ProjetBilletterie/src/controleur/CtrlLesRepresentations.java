@@ -34,7 +34,7 @@ import vue.vueVoirRepresentation;
  */
 public class CtrlLesRepresentations implements WindowListener, ActionListener, MouseListener {
      private vueVoirRepresentation vue; // LA VUE
-     
+     private vueReservation vue2;
      
      public CtrlLesRepresentations(vueVoirRepresentation vue) {
         
@@ -144,9 +144,9 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
         String Places = (String) vue.getjTable1().getValueAt(row, 5);
         int rep = JOptionPane.showConfirmDialog(vue, "Representation : " + groupeChoisis + "\n" + "Il reste : " + Places + " places"+"\n"+"Voulez-vous acheter des places ?");
         if(rep == JOptionPane.YES_OPTION){                 
-            new vueReservation().setVisible(true);
-            
+            vue2.getjLabel9().setText(groupeChoisis);
     }
+        
         
              
         

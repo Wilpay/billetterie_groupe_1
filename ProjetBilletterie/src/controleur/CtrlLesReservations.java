@@ -31,7 +31,7 @@ public class CtrlLesReservations implements WindowListener, ActionListener, Mous
         this.vue = vue;
         // le contrôleur écoute la vue
         this.vue.addWindowListener(this);
-
+        this.vue.getjButton1().addActionListener(this);
     }
         
         
@@ -52,7 +52,7 @@ public class CtrlLesReservations implements WindowListener, ActionListener, Mous
 
     @Override
     public void windowOpened(WindowEvent we) {
-        
+       throw new UnsupportedOperationException("Not supported yet.");
         
         
     }
@@ -94,7 +94,7 @@ public class CtrlLesReservations implements WindowListener, ActionListener, Mous
 
     @Override
     public void mouseClicked(MouseEvent me) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
