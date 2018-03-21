@@ -34,7 +34,7 @@ import vue.vueVoirRepresentation;
  */
 public class CtrlLesRepresentations implements WindowListener, ActionListener, MouseListener {
      private vueVoirRepresentation vue; // LA VUE
-     private vueReservation vue2;
+     
      
      public CtrlLesRepresentations(vueVoirRepresentation vue) {
         
@@ -43,7 +43,12 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
         this.vue.addWindowListener(this);
         // le controleur écoute le bouton jButtonRechercher de sa vue
         this.vue.getjTable1().addMouseListener(this);
-        
+        this.vue.getjTextField1().addMouseListener(this);
+        this.vue.getjTextField2().addMouseListener(this);
+        this.vue.getjTextField3().addMouseListener(this);
+        this.vue.getjTextField4().addMouseListener(this);
+        this.vue.getjTextField6().addMouseListener(this);
+        this.vue.getjComboBox1().addMouseListener(this);
         
         // préparer l'état iniitial de la vue
         List<Representation> lesRepresentations = null;
@@ -139,13 +144,24 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        
         int row = vue.getjTable1().getSelectedRow();
-        String groupeChoisis = (String) vue.getjTable1().getValueAt(row, 0);
+        String prix = "4";
+        String LieuChoisis = (String) vue.getjTable1().getValueAt(row, 0);
         String Places = (String) vue.getjTable1().getValueAt(row, 5);
-        int rep = JOptionPane.showConfirmDialog(vue, "Representation : " + groupeChoisis + "\n" + "Il reste : " + Places + " places"+"\n"+"Voulez-vous acheter des places ?");
-        if(rep == JOptionPane.YES_OPTION){                 
-            vue2.getjLabel9().setText(groupeChoisis);
-    }
+        String GroupeChoisis = (String) vue.getjTable1().getValueAt(row, 1);
+        String DateChoisis = (String) vue.getjTable1().getValueAt(row, 2);
+        String HeureDebut = (String) vue.getjTable1().getValueAt(row, 3);
+        String HeureFin = (String) vue.getjTable1().getValueAt(row, 4);               
+            vue.getjTextField1().setText(LieuChoisis);
+            vue.getjTextField2().setText(GroupeChoisis);
+            vue.getjTextField3().setText(DateChoisis);
+            vue.getjTextField4().setText(HeureDebut);
+            vue.getjTextField5().setText(HeureFin);
+            vue.getjTextField6().setText(prix);
+        if(e.getSource() ==  vue.getjComboBox1()){
+            vue.getjTextField6().setText("test");
+        }
         
         
              
