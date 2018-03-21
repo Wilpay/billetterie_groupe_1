@@ -27,13 +27,14 @@ public class Main {
         Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "festival", "root", "");
         try {
             Jdbc.getInstance().connecter();
+            vuePrincipale VueP = new vuePrincipale();
             vueVoirRepresentation uneVue = new vueVoirRepresentation();
             CtrlLesRepresentations unControleur = new CtrlLesRepresentations(uneVue);
             vueReservation uneAutreVue = new vueReservation();
             CtrlLesReservations unAutreControleur = new CtrlLesReservations(uneAutreVue);
             
             // afficher la vue
-            uneVue.setVisible(true);
+            VueP.setVisible(true);
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Main - classe JDBC non trouvée");
         } catch (SQLException ex) {
