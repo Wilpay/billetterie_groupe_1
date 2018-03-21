@@ -24,7 +24,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "festival", "root", "");
+        Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "festival", "root", "joliverie");
         try {
             Jdbc.getInstance().connecter();
             vuePrincipale VueP = new vuePrincipale();
@@ -34,7 +34,7 @@ public class Main {
             CtrlLesReservations unAutreControleur = new CtrlLesReservations(uneAutreVue);
             
             // afficher la vue
-            VueP.setVisible(true);
+            uneVue.setVisible(true);
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Main - classe JDBC non trouvée");
         } catch (SQLException ex) {
