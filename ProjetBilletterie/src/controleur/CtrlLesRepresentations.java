@@ -49,7 +49,7 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
         this.vue.getjTextField4().addMouseListener(this);
         this.vue.getjTextField6().addMouseListener(this);
         this.vue.getjComboBox1().addMouseListener(this);
-        
+        this.vue.getjButton1().addMouseListener(this);
         // préparer l'état iniitial de la vue
         List<Representation> lesRepresentations = null;
         try {
@@ -146,22 +146,30 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
     public void mouseClicked(MouseEvent e) {
         
         int row = vue.getjTable1().getSelectedRow();
-        String prix = "4 €";
+        int prix = 4;
+        int prixfinal = 0;
         String LieuChoisis = (String) vue.getjTable1().getValueAt(row, 0);
         String Places = (String) vue.getjTable1().getValueAt(row, 5);
         String GroupeChoisis = (String) vue.getjTable1().getValueAt(row, 1);
         String DateChoisis = (String) vue.getjTable1().getValueAt(row, 2);
         String HeureDebut = (String) vue.getjTable1().getValueAt(row, 3);
         String HeureFin = (String) vue.getjTable1().getValueAt(row, 4);               
-            vue.getjTextField1().setText(LieuChoisis);
-            vue.getjTextField2().setText(GroupeChoisis);
-            vue.getjTextField3().setText(DateChoisis);
-            vue.getjTextField4().setText(HeureDebut);
-            vue.getjTextField5().setText(HeureFin);
-            vue.getjTextField6().setText(prix);
-        if(e.getSource() ==  vue.getjComboBox1()){
-            vue.getjTextField6().setText("test");
-        }
+        vue.getjTextField1().setText(LieuChoisis);
+        vue.getjTextField2().setText(GroupeChoisis);
+        vue.getjTextField3().setText(DateChoisis);
+        vue.getjTextField4().setText(HeureDebut);
+        vue.getjTextField5().setText(HeureFin);        
+        vue.getjComboBox1().removeAllItems();
+        
+        for(int i=0; i <= Integer.parseInt(Places); i++){ 
+            vue.getjComboBox1().addItem(Integer.toString(i));
+            //vue.getjComboBox1().getSelectedItem().toString();
+            prixfinal = prix * Integer.parseInt(vue.getjComboBox1().getSelectedItem().toString());
+            vue.getjTextField6().setText(Integer.toString(prixfinal));     
+    }
+        
+        
+        
         
         
              

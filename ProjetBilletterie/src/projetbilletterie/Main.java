@@ -7,6 +7,7 @@ package projetbilletterie;
 
 import controleur.CtrlLesRepresentations;
 import controleur.CtrlLesReservations;
+import controleur.CtrlMenuPrincipal;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import modele.dao.Jdbc;
@@ -28,13 +29,14 @@ public class Main {
         try {
             Jdbc.getInstance().connecter();
             vuePrincipale VueP = new vuePrincipale();
+            CtrlMenuPrincipal unControleur2 = new CtrlMenuPrincipal(VueP);
             vueVoirRepresentation uneVue = new vueVoirRepresentation();
             CtrlLesRepresentations unControleur = new CtrlLesRepresentations(uneVue);
             vueReservation uneAutreVue = new vueReservation();
             CtrlLesReservations unAutreControleur = new CtrlLesReservations(uneAutreVue);
             
             // afficher la vue
-            VueP.setVisible(true);
+            uneVue.setVisible(true);
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Main - classe JDBC non trouvée");
         } catch (SQLException ex) {
