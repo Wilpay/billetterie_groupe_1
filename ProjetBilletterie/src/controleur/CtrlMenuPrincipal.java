@@ -9,9 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import vue.vuePrincipale;
 import vue.vueVoirRepresentation;
 
@@ -45,7 +42,7 @@ public class CtrlMenuPrincipal implements WindowListener, ActionListener{
 
     @Override
     public void windowOpened(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
     @Override
@@ -70,7 +67,7 @@ public class CtrlMenuPrincipal implements WindowListener, ActionListener{
 
     @Override
     public void windowActivated(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   
     }
 
     @Override
@@ -80,8 +77,12 @@ public class CtrlMenuPrincipal implements WindowListener, ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-                 this.vue2.setVisible(true);
+        if(ae.getSource().equals(this.vue.getjButton1())){
+            new vueVoirRepresentation().setVisible(true);
+            new CtrlLesRepresentations(vue2).getVue();
+        }
+        
     
     
-}
+    }
 }

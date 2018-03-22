@@ -25,6 +25,7 @@ import static javax.swing.UIManager.getString;
 import modele.dao.DaoGroupe;
 import modele.dao.DaoRepresentation;
 import modele.metier.Representation;
+import vue.vuePrincipale;
 import vue.vueReservation;
 import vue.vueVoirRepresentation;
 
@@ -34,13 +35,15 @@ import vue.vueVoirRepresentation;
  */
 public class CtrlLesRepresentations implements WindowListener, ActionListener, MouseListener {
      private vueVoirRepresentation vue; // LA VUE
+    
      
      
      public CtrlLesRepresentations(vueVoirRepresentation vue) {
-        
+
         this.vue = vue;
         // le contrôleur écoute la vue
         this.vue.addWindowListener(this);
+
         // le controleur écoute le bouton jButtonRechercher de sa vue
         this.vue.getjTable1().addMouseListener(this);
         this.vue.getjTextField1().addMouseListener(this);
@@ -50,6 +53,7 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
         this.vue.getjTextField6().addMouseListener(this);
         this.vue.getjComboBox1().addMouseListener(this);
         this.vue.getjButton1().addMouseListener(this);
+        this.vue.getjButton2().addActionListener(this);
         // préparer l'état iniitial de la vue
         List<Representation> lesRepresentations = null;
         try {

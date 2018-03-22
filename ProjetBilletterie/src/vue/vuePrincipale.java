@@ -81,6 +81,14 @@ public class vuePrincipale extends javax.swing.JFrame {
        this.vue2.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public vueVoirRepresentation getVue2() {
+        return vue2;
+    }
+
+    public void setVue2(vueVoirRepresentation vue2) {
+        this.vue2 = vue2;
+    }
+
     public JButton getjButton1() {
         return jButton1;
     }
