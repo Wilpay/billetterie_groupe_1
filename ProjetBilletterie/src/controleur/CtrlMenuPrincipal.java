@@ -9,7 +9,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import vue.vuePrincipale;
+import vue.vueVoirRepresentation;
 
 /**
  *
@@ -17,6 +21,7 @@ import vue.vuePrincipale;
  */
 public class CtrlMenuPrincipal implements WindowListener, ActionListener{
      private vuePrincipale vue;
+     private vueVoirRepresentation vue2;
      
      
      public CtrlMenuPrincipal(vuePrincipale vue) {
@@ -75,6 +80,8 @@ public class CtrlMenuPrincipal implements WindowListener, ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if(ae.getSource())
-    }
+                 this.vue2.setVisible(true);
+    
+    
+}
 }

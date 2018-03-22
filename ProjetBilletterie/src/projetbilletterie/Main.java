@@ -36,7 +36,7 @@ public class Main {
             CtrlLesReservations unAutreControleur = new CtrlLesReservations(uneAutreVue);
             
             // afficher la vue
-            uneVue.setVisible(true);
+            VueP.setVisible(true);
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Main - classe JDBC non trouvée");
         } catch (SQLException ex) {
